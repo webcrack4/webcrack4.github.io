@@ -1,0 +1,7 @@
+theme: jekyll-theme-hacker
+favicon: favicon.ico
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true

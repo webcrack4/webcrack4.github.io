@@ -2,6 +2,10 @@
 
 [极简博客搭建教程](./tutorial/index.md)
 
+[管理](./management/index.md)
+
+[生活小技巧](./life/index.md)
+
 [golang](./golang/index.md)
 
 [c++](./cpp/index.md)

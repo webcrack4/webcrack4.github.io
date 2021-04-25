@@ -1,3 +1,7 @@
+```js script
+import './gitalk-container.js';  
+```
+
 ## 欢迎来到我的博客
 
 [极简博客搭建教程](./tutorial/index.md)
@@ -20,5 +24,9 @@
 
 [Business and Management](./business/index.md)
 
+<!-- 引入 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
-<include src="./_footer.html"></include>
+<!-- 在页面中添加一个容器-->
+<div id="gitalk-container"></div>

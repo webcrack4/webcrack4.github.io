@@ -31,3 +31,5 @@ Disqus（被墙）
 所以从长期来看，基于github issue api的评论插件是最稳定的，而且和github pages相性很好，下面附上搭建教程。用法只需要想博客首页的插件代码那样，加上4个html标签在markdown上即可渲染出评论区。
 
 [如何通过Gitalk评论插件](https://segmentfault.com/a/1190000019295776)
+
+{% include footer.html %}

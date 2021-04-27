@@ -3,7 +3,7 @@
 const gitalk = new Gitalk({
   clientID: '5fb4cba54ce83a85cd77', //GitHub Application Client ID
 
-  clientSecret: 'f7ef1be8d0c080ce5b3e00bbf429b4c01566ac05 ', //GitHub Application Client Secret
+  clientSecret: '08ad41a4a6c2ab1e94f4851670561f7e2cb9d2f4', //GitHub Application Client Secret
 
   repo: 'myBlogTalk', //仓库名称(GitHub repo)
   owner: 'webcrack4', //仓库拥有者(GitHub repo owner)

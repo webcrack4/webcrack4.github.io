@@ -7,7 +7,7 @@ const gitalk = new Gitalk({
 
   repo: 'myBlogTalk', //仓库名称(GitHub repo)
   owner: 'webcrack4', //仓库拥有者(GitHub repo owner)
-  admin: ['Webcrack4'],
+  admin: ['webcrack4'],
   id: location.href,      // Ensure uniqueness and length less than 50
   distractionFreeMode: false  // Facebook-like distraction free mode
 })

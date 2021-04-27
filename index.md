@@ -22,3 +22,9 @@
 [Business and Management](./business/index.md)
 
 [evidence](./evidence/index.md)
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- 在页面中添加一个容器-->
+<div id="gitalk-container"></div>
+<script src="./gitalk-container.js"></script>

@@ -35,9 +35,9 @@
 [id过长导致gitalk Error: Validation Failed的修复方法](https://blog.csdn.net/death05/article/details/83618887)
 
 尽量根据这两个教程，完成第一个之后，下载完第二个的js md5文件，模仿我的博客搭建方法，把md5js文件这样放 /js/src/md5.min.js。 然后在项目根目录创建 /_include/footer.html的文件，内容是gitalk必要js,之后在每个博客最下面加上
-
-    {% include footer.html %}
-        
+```
+{% include footer.html %}
+```
 即可使在该页使用评论插件
 
 {% include footer.html %}

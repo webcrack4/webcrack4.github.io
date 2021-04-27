@@ -1,7 +1,9 @@
 
 ## 欢迎来到我的博客
 
-[极简博客搭建教程](./tutorial/index.md)
+[搭建极简博客（无编译环境）教程](./tutorial/minimalism_blog.md)
+
+[搭建极简页面评论插件（无编译环境）教程](./tutorial/minimalism_comment.md)
 
 [//]:[管理](./management/index.md)
 

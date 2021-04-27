@@ -65,4 +65,4 @@ relative_links:
 
 然后就可以愉快地写博客了，只需要创建一个Markdown文件，把跳转页面加好，push回去大概等个5分钟左右（github pages后台会自动用jekyll套件生成页面）,就可以看到你新博客内容了
 
-{ include footer.html }
+{% include footer.html %}

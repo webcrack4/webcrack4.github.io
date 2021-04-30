@@ -1,8 +1,8 @@
 ## 欢迎来到我的博客
 
-[搭建极简博客（无编译环境）教程](./tutorial/minimalism_blog.md)
+[搭建极简博客（无编译环境、手机可操作）教程](./tutorial/minimalism_blog.md)
 
-[搭建极简页面评论插件（无编译环境）教程](./tutorial/minimalism_comment.md)
+[搭建极简页面评论插件（无编译环境、手机可操作）教程](./tutorial/minimalism_comment.md)
 
 [如何利用 Github 搭建自己的免费图床？](https://zhuanlan.zhihu.com/p/347342082)
 

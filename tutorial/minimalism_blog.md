@@ -45,7 +45,9 @@
 
 ### 到底怎么用github pages可以操作简单，手机电脑都方便操作
 
-其实方法就是github pages搭好直接写，不要编译那一套，网上使用github pages教程的方法几乎都是走编译那一套
+其实方法就是github pages搭好直接写，不要编译那一套，网上使用github pages教程的方法几乎都是走编译那一套。不编译的有两种方法。
+
+第一种是常规的开博客方法，就是直接利用github pages本身自带的jekyll部署系统
 
 第一步：开好账号注册并设置[三分钟在GitHub上搭建个人博客](https://zhuanlan.zhihu.com/p/28321740)
 
@@ -63,6 +65,11 @@ relative_links:
   
 这样就可以支持相对路径跳转页面了
 
-然后就可以愉快地写博客了，只需要创建一个Markdown文件，把跳转页面加好，push回去大概等个5分钟左右（github pages后台会自动用jekyll套件生成页面）,就可以看到你新博客内容了
+然后就可以愉快地写博客了，只需要创建一个Markdown文件，把跳转页面加好，push回去大概等个5分钟左右（github pages后台会自动用jekyll套件生成页面）,就可以看到你新博客内容了。
+
+
+第二种方法就是直接fork其他github的博客项目，然后改仓库名，启动github pages功能就可以世界使用，例如
+![beautiful-jekyll](https://github.com/daattali/beautiful-jekyll)
+
 
 {% include footer.html %}

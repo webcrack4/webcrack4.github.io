@@ -69,7 +69,9 @@ relative_links:
 
 
 第二种方法就是直接fork其他github的博客项目，然后改仓库名，启动github pages功能就可以世界使用，例如
+
 ![jekyllthemes](http://jekyllthemes.org/)
+
 ![beautiful-jekyll](https://github.com/daattali/beautiful-jekyll)
 
 

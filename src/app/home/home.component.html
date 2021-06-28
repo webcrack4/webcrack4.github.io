@@ -1,0 +1,276 @@
+<div class="container">
+  <h1>Hi Slayer!</h1>
+  <p>Welcome to Dauntless Equip Set AutoBuilder</p>
+  <p>dauntless version : {{ dv?.dauntless_version }}</p>
+</div>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      Choose Your Weapon&nbsp;<input type="checkbox" [(ngModel)]="hasWeapon" />
+    </div>
+  </div>
+  <div class="row" *ngIf="hasWeapon">
+    <div class="col-md-2">
+      Weapon Type:
+    </div>
+    <select [(ngModel)]="selectedWeaponType" class="form-select col-md-2">
+      <option *ngFor="let weaponType of weaponTypes" [ngValue]="weaponType">{{weaponType}}</option>
+    </select>
+
+  </div>
+  <div class="row" *ngIf="selectedWeaponType">
+    <div class="col-md-2">
+      Select Your Weapon:
+    </div>
+    <select [(ngModel)]="selectedWeapon" class="col-md-2" *ngIf="selectedWeaponType">
+      <option *ngFor="let w of weapons[selectedWeaponType]" [ngValue]="w">{{w.name}}</option>
+    </select>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      Include Lantern Utility Cell&nbsp;<input type="checkbox" [(ngModel)]="hasLantern" />
+    </div>
+  </div>
+</div>
+
+
+<hr />
+
+<div class="container" *ngFor="let type of types">
+  <div class="row">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+          <h3 class="panel-title"><h3>{{type}}</h3></h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-4 col-lg-3 col-xs-6" *ngFor="let perk of skillList[type]">
+          <div class="row">
+            <div class="col-md-6 col-lg-7">
+              {{perk}}
+            </div>
+            <select class="col-md-3 col-lg-3" [(ngModel)]="searchValue[perk]" [ngClass]="searchValue[perk]? 'bg-info' : 'bg-white'">
+              <option *ngFor="let l of level" [ngValue]="l">{{l}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+<br />
+
+
+
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)=Search()>Search</button>
+  <button type="button" class="btn btn-primary" (click)=MoreSkill()>More Skill</button>
+  <button type="button" class="btn btn-primary" (click)=Reset()>Reset</button>
+</div>
+<hr />
+<div class="container">
+  <div class="row">
+    <h2 class="text-warning" *ngIf="loading">Loading......</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <span *ngIf="!showWeapon">Weapon : None</span>
+      <span class="badge badge-primary" *ngIf="showWeapon">Weapon : {{weaponNameForShow}}&nbsp;&nbsp;&nbsp;Type : {{weaponTypeForShow}}</span>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      Include lantern utility cell slot : <span *ngIf="!hasLantern">No</span><span class="badge badge-primary" *ngIf="hasLantern">Yes</span>
+    </div>
+  </div>
+  <br />
+  <div class="row" *ngIf="isShowSearchResult">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>
+            Head
+          </td>
+          <td>
+            Torso
+          </td>
+          <td>
+            Arms
+          </td>
+          <td>
+            Legs
+          </td>
+          <td>
+            Cells
+          </td>
+          <td>
+            Operation
+          </td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let resultSet of searchResult">
+        <tr>
+          <td *ngFor="let part of parts">
+            <div *ngIf="!resultSet.equips[part]">None</div>
+            <div *ngIf="resultSet.equips[part]">
+              <p class="alert alert-success" *ngIf="!resultSet.equips[part].isVirtual">{{resultSet.equips[part].name}}</p>
+              <p class="alert alert-warning" *ngIf="resultSet.equips[part].isVirtual">{{resultSet.equips[part].name}}</p>
+            </div>
+          </td>
+          <td>
+            <table>
+              <tbody *ngFor="let cell of resultSet.cells">
+                <tr>
+                  <td>
+                    <span class="badge badge-primary">{{cell.name}}&nbsp;+{{cell.value}}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" (click)="ShowModal(resultSet)">
+              Detail
+            </button>
+            <button  class="btn btn-primary btn-sm" (click)="Export(resultSet)">
+              <span class='glyphicon glyphicon-download-alt'></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row" *ngIf="isShowMoreSkillResult">
+    <div class="col-md-4 col-lg-3" *ngFor="let moreSkill of moreSkillResult">
+      <a (click)="addSkillIntoSearchList(moreSkill)">{{moreSkill.key.name}}&nbsp;+{{moreSkill.value}}</a>
+    </div>
+  </div>
+  <br />
+</div>
+<hr />
+The maximun search record number is 30.
+<hr />
+Let me know how I can improve your experience with this tool.
+<br />
+Email: zyang13@mail.wou.edu
+<br />
+<a href="https://www.reddit.com/r/dauntless/comments/cpnzv0/dauntless_autobuilder_new_update/">Reddit</a>
+<br />
+QQ Group: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d7f23fc6c6a584bfd95c3121b5d819ceb3720999e704907195413d83ffbd4f3b"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="dauntless无畏" title="dauntless无畏"></a>
+<hr />
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Detail</h4>
+      </div>
+      <div class="modal-body" *ngIf="isShowDetail">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Parts</td>
+              <td>Name</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let part of parts">
+              <td>{{part}}</td>
+              <td *ngIf="!setDetail.equips[part]">None</td>
+              <td *ngIf="setDetail.equips[part]">{{setDetail.equips[part].name}}</td>
+            </tr>
+            <tr>
+              <td>Cells:</td>
+              <td colspan="2">
+                <span class="badge badge-primary" *ngFor="let cell of setDetail.cells">
+                  {{cell.name}}&nbsp;+{{cell.value}}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Skill</td>
+              <td>Weapon</td>
+              <td>Head</td>
+              <td>Torso</td>
+              <td>Arms</td>
+              <td>Legs</td>
+              <td>Cells</td>
+              <td>Total</td>
+              <!--<td>Effect</td>-->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let skill of selectSkill">
+              <td>{{skill.key}}</td>
+              <td *ngIf="weaponDetail">
+                <!-- <p *ngIf="weaponDetail.skill && weaponDetail.skill.name == skill.key">
+                  <b *ngIf="skill.value>3">3</b>
+                  <b *ngIf="skill.value<=3">{{skill.value}}</b>
+                </p> -->
+              </td>
+              <td *ngIf="!setDetail.equips.Head"></td>
+
+              <td *ngIf="setDetail.equips.Head">
+                <p *ngIf="setDetail.equips.Head.skill && setDetail.equips.Head.skill.name == skill.key">
+                  <b *ngIf="skill.value>3">3</b>
+                  <b *ngIf="skill.value<=3">{{skill.value}}</b>
+                </p>
+              </td>
+              <td *ngIf="!setDetail.equips.Head"></td>
+
+              <td *ngIf="setDetail.equips.Torso">
+                <p *ngIf="setDetail.equips.Torso.skill && setDetail.equips.Torso.skill.name == skill.key">
+                  <b *ngIf="skill.value>3">3</b>
+                  <b *ngIf="skill.value<=3">{{skill.value}}</b>
+                </p>
+              </td>
+              <td *ngIf="!setDetail.equips.Torso"></td>
+
+              <td *ngIf="setDetail.equips.Arms">
+                <p *ngIf="setDetail.equips.Arms.skill && setDetail.equips.Arms.skill.name == skill.key">
+                  <b *ngIf="skill.value>3">3</b>
+                  <b *ngIf="skill.value<=3">{{skill.value}}</b>
+                </p>
+              </td>
+              <td *ngIf="!setDetail.equips.Arms"></td>
+
+              <td *ngIf="setDetail.equips.Legs">
+                <p *ngIf="setDetail.equips.Legs.skill && setDetail.equips.Legs.skill.name == skill.key">
+                  <b *ngIf="skill.value>3">3</b>
+                  <b *ngIf="skill.value<=3">{{skill.value}}</b>
+                </p>
+              </td>
+              <td *ngIf="!setDetail.equips.Legs"></td>
+
+              <td>
+                <p *ngIf="cellDetail[skill.key]">
+                  {{cellDetail[skill.key]}}
+                </p>
+              </td>
+              <td>{{skill.value}}</td>
+              <!--
+  <td><p *ngFor="let effect of perks[skill.key][skill.value].description">
+    <b *ngIf="effect">{{effect}}</b></p>
+  </td>
+              -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+        <button class="btn btn-default btn-sm" (click)="Export(setDetail)">
+          <span class='glyphicon glyphicon-download-alt'></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

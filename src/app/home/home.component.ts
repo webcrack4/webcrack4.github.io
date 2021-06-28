@@ -16,14 +16,12 @@ export class HomeComponent {
   public types = ["Defence","Mobility","Power","Technique","Utility"];
   public dv = require("../../assets/dauntless_version.json");
   public skillList: { [index: string]: SkillList }[] = require("../../assets/skillList.json");
-  public weapons: { [index: string]: Weapon }[] = require("../../assets/weapons.json");;
+  public weapons: { [index: string]: Weapon }[] = require("../../assets/weapons.json");
   public perks: { [index: string]: Perk }[] = require("../../assets/effectList.json");
   public searchValue = [];
   public searchResult = [];
   public moreSkillResult = [];
-  public httpClient: HttpClient;
-  public baseUrl: string;
-  public hasLantern: boolean;
+  public hasLantern: boolean = false;
   public hasWeapon: boolean = false;
   public showWeapon: boolean = false;
   public loading: boolean = false;
@@ -38,13 +36,18 @@ export class HomeComponent {
   public weaponNameForShow = {};
   public isShowDetail = false;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.httpClient = http;
-    this.baseUrl = baseUrl;
+  private classifiedEquips = require("../../assets/classifiedEquips.json");
+  private virtualEquips = require("../../assets/virtualEquips.json");
+  private effectList = require("../../assets/effectList.json");
+  private availableSkillList = require("../../assets/availableSkillList.json");
+  private lanterns = require("../../assets/lanterns.json");
+  private cells = require("../../assets/cells.json");
+  private armours = require("../../assets/armours.json");
+
+  constructor() {
     this.hasLantern = false;
     this.hasWeapon = false;
-    console.log("weapon", this.weapons);
-    console.log("perks", this.perks);
+    console.log("virtualEquips", this.virtualEquips);
   }
 
   ShowModal(set) {
@@ -84,29 +87,26 @@ export class HomeComponent {
       this.selectedWeapon = {} as Weapon;
       this.showWeapon = false;
     }
-    let requestBody = {} as RequestBody;
-    requestBody.keyValueList = [];
-    for (let key in this.searchValue) {
-      if (this.searchValue[key] != 0)
-        requestBody.keyValueList.push({key: key, value: this.searchValue[key]});
-    }
-    this.selectSkill = requestBody.keyValueList;
+    
+    // let requestBody = {} as RequestBody;
+    // requestBody.keyValueList = [];
+    // for (let key in this.searchValue) {
+    //   if (this.searchValue[key] != 0)
+    //     requestBody.keyValueList.push({key: key, value: this.searchValue[key]});
+    // }
+    // this.selectSkill = requestBody.keyValueList;
     this.weaponDetail = this.selectedWeapon;
-    requestBody.hasLantern = this.hasLantern;
-    requestBody.weaponType = this.selectedWeapon.type;
-    requestBody.weaponName = this.selectedWeapon.name;
+    // requestBody.hasLantern = this.hasLantern;
+    // requestBody.weaponType = this.selectedWeapon.type;
+    // requestBody.weaponName = this.selectedWeapon.name;
     this.weaponTypeForShow = this.selectedWeapon.type;
     this.weaponNameForShow = this.selectedWeapon.name;
-    const headers = new HttpHeaders().set('content-type', 'application/json');
-    this.httpClient.post<any>(
-      this.baseUrl + 'api/Home/Search', requestBody, { headers: headers }
-    )
-      .subscribe(result => {
-        this.searchResult = result;
-        this.loading = false;
-        this.isShowSearchResult = true;
-        this.isShowMoreSkillResult = false;
-      }, error => console.error(error));
+
+
+    this.searchResult = []; //todo 搜索结果
+    this.loading = false;
+    this.isShowSearchResult = true;
+    this.isShowMoreSkillResult = false;
   }
 
   MoreSkill() {
@@ -128,16 +128,12 @@ export class HomeComponent {
     requestBody.weaponName = this.selectedWeapon.name;
     this.weaponTypeForShow = this.selectedWeapon.type;
     this.weaponNameForShow = this.selectedWeapon.name;
-    const headers = new HttpHeaders().set('content-type', 'application/json');
-    this.httpClient.post<any>(
-      this.baseUrl + 'api/Home/MoreSkill', requestBody, { headers: headers }
-    )
-      .subscribe(result => {
-        this.moreSkillResult = result;
-        this.loading = false;
-        this.isShowSearchResult = false;
-        this.isShowMoreSkillResult = true;
-      }, error => console.error(error));
+
+
+    this.moreSkillResult = [];  //todo: more skill 结果
+    this.loading = false;
+    this.isShowSearchResult = false;
+    this.isShowMoreSkillResult = true;
   }
 
   Export(set) {

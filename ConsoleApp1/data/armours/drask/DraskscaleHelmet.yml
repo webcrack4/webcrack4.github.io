@@ -1,0 +1,19 @@
+name: Draskscale Helmet
+description: Head protection forged from Drask trophies.
+icon: /assets/icons/armours/drask/DraskscaleHelmet.png
+type: Head
+strength: Shock
+weakness: Terra
+cells: Power
+resistance:
+  0: 5
+  1: 30
+perks:
+  - name: Aetheric Attunement
+    value: 1
+    from: 0
+    to: 0
+  - name: Aetheric Attunement
+    value: 3
+    from: 1
+    to: 1

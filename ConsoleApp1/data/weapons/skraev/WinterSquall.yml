@@ -1,0 +1,28 @@
+name: Winter Squall
+description: A Slayer's hammer forged with Skraev trophies.
+icon: /assets/icons/weapons/skraev/WinterSquall.png
+type: Hammer
+damage: Blunt
+elemental: Frost
+cells: [Power, Mobility]
+power:
+  0: 60
+  1: 120
+perks:
+  - name: Nimble
+    value: 2
+    from: 0
+    to: 0
+  - name: Nimble
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: IceMines
+    description: Evading drops 1 Ice Mines on a 30 second cooldown.
+    from: 0
+    to: 0
+  - name: IceMines
+    description: Evading drops 3 Ice Mines on a 30 second cooldown.
+    from: 1
+    to: 1

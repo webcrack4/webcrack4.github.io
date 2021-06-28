@@ -1,0 +1,19 @@
+name: Thrax's Scream
+description: Head protection forged from Thrax trophies.
+icon: /assets/icons/armours/thrax/ThraxsScream.png
+type: Head
+strength: Umbral
+weakness: Radiant
+cells: Utility
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Catalyst
+    value: 2
+    from: 0
+    to: 0
+  - name: Catalyst
+    value: 3
+    from: 1
+    to: 1

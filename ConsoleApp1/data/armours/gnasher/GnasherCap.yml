@@ -1,0 +1,19 @@
+name: Gnasher Cap
+description: Head protection forged from Gnasher trophies.
+icon: /assets/icons/armours/gnasher/GnasherCap.png
+type: Head
+strength: null
+weakness: null
+cells: Defence
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Tenacious
+    value: 1
+    from: 0
+    to: 0
+  - name: Tenacious
+    value: 3
+    from: 1
+    to: 1

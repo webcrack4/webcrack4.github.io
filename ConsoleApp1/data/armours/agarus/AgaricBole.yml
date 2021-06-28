@@ -1,0 +1,19 @@
+name: Agaric Bole
+description: Torso protection forged from Agarus trophies.
+icon: /assets/icons/armours/agarus/AgaricBole.png
+type: Torso
+strength: Terra
+weakness: Shock
+cells: Utility
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Parasitic
+    value: 2
+    from: 0
+    to: 0
+  - name: Parasitic
+    value: 3
+    from: 1
+    to: 1

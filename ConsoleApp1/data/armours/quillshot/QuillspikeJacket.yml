@@ -1,0 +1,19 @@
+name: Quillspike Jacket
+description: Torso protection forged from Quillshot trophies.
+icon: /assets/icons/armours/quillshot/QuillspikeJacket.png
+type: Torso
+strength: null
+weakness: null
+cells: Technique
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Savagery
+    value: 1
+    from: 0
+    to: 0
+  - name: Savagery
+    value: 3
+    from: 1
+    to: 1

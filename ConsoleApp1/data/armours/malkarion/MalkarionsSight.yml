@@ -1,0 +1,19 @@
+name: Malkarion's Sight
+description: Head protection forged from Malkarion trophies.
+icon: /assets/icons/armours/malkarion/MalkarionsSight.png
+type: Head
+strength: Shock
+weakness: Terra
+cells: Mobility
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Grace
+    value: 2
+    from: 0
+    to: 0
+  - name: Grace
+    value: 3
+    from: 1
+    to: 1

@@ -1,0 +1,19 @@
+name: Draskscale Greaves
+description: Leg and foot protection forged from Drask trophies.
+icon: /assets/icons/armours/drask/DraskscaleGreaves.png
+type: Legs
+strength: Shock
+weakness: Terra
+cells: Utility
+resistance:
+  0: 5
+  1: 30
+perks:
+  - name: Fleet Footed
+    value: 1
+    from: 0
+    to: 0
+  - name: Fleet Footed
+    value: 3
+    from: 1
+    to: 1

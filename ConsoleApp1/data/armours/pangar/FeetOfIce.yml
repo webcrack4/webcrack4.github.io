@@ -1,0 +1,19 @@
+name: Feet of Ice
+description: Leg and foot protection forged from Pangar trophies.
+icon: /assets/icons/armours/pangar/FeetOfIce.png
+type: Legs
+strength: Frost
+weakness: Blaze
+cells: Defence
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Overpower
+    value: 1
+    from: 0
+    to: 0
+  - name: Overpower
+    value: 3
+    from: 1
+    to: 1

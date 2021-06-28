@@ -1,0 +1,24 @@
+name: Raging Crash
+description: A Slayer's hammer forged with Gnasher trophies.
+icon: /assets/icons/weapons/gnasher/RagingCrash.png
+type: Hammer
+damage: Blunt
+elemental: null
+cells: [Power, Utility]
+power:
+  0: 20
+  1: 120
+perks:
+  - name: Ragehunter
+    value: 1
+    from: 0
+    to: 0
+  - name: Ragehunter
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: GnasherRage
+    description: >
+      Periodically enter a rage, dealing +10% damage and gaining immunity to stagger. Taking damage causes you to
+      enrage more quickly.

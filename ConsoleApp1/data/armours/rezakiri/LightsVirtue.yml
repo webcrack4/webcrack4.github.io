@@ -1,0 +1,19 @@
+name: Light's Virtue
+description: Torso protection forged from Rezakiri trophies.
+icon: /assets/icons/armours/rezakiri/LightsVirtue.png
+type: Torso
+strength: Radiant
+weakness: Umbral
+cells: Utility
+resistance:
+  0: 20
+  1: 30
+perks:
+  - name: Cunning
+    value: 2
+    from: 0
+    to: 0
+  - name: Cunning
+    value: 3
+    from: 1
+    to: 1

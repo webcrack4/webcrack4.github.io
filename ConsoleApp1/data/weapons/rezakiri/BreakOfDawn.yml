@@ -1,0 +1,23 @@
+name: Break of Dawn
+description: A Slayer's hammer forged with Rezakiri trophies.
+icon: /assets/icons/weapons/rezakiri/BreakOfDawn.png
+type: Hammer
+damage: Blunt
+elemental: Radiant
+cells: [Power, Mobility]
+power:
+  0: 80
+  1: 120
+perks:
+  - name: Cunning
+    value: 2
+    from: 0
+    to: 0
+  - name: Cunning
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: HitTwice
+    description: 10% chance for attacks to Hit twice.
+    value: 0.1

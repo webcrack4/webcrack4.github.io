@@ -1,0 +1,19 @@
+name: Shell of the Swarm
+description: Torso protection forged from Kharabak trophies.
+icon: /assets/icons/armours/kharabak/ShellOfTheSwarm.png
+type: Torso
+strength: Terra
+weakness: Shock
+cells: Technique
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Bladestorm
+    value: 1
+    from: 0
+    to: 0
+  - name: Bladestorm
+    value: 3
+    from: 1
+    to: 1

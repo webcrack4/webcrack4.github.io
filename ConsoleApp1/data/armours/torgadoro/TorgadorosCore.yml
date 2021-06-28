@@ -1,0 +1,19 @@
+name: Torgadoro's Core
+description: Torso protection forged from Torgadoro trophies.
+icon: /assets/icons/armours/torgadoro/TorgadorosCore.png
+type: Torso
+strength: Blaze
+weakness: Frost
+cells: Power
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Knockout King
+    value: 2
+    from: 0
+    to: 0
+  - name: Knockout King
+    value: 3
+    from: 1
+    to: 1

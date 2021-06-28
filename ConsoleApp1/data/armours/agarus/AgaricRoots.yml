@@ -1,0 +1,19 @@
+name: Agaric Roots
+description: Leg and foot protection forged from Agarus trophies.
+icon: /assets/icons/armours/agarus/AgaricRoots.png
+type: Legs
+strength: Terra
+weakness: Shock
+cells: Defence
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Fortress
+    value: 2
+    from: 0
+    to: 0
+  - name: Fortress
+    value: 3
+    from: 1
+    to: 1

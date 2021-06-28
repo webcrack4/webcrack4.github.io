@@ -1,0 +1,30 @@
+name: Ember Pike
+description: A Slayer's war pike forged with Embermane trophies.
+icon: /assets/icons/weapons/embermane/EmberPike.png
+type: War Pike
+damage: Piercing
+elemental: Blaze
+cells: [Technique, Mobility]
+power:
+  0: 20
+  1: 120
+perks:
+  - name: Evasive Fury
+    value: 1
+    from: 0
+    to: 0
+  - name: Evasive Fury
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: SeventhHitWoundDamage
+    description: The sixth hit in a row deals +100 wound damage
+    value: 100
+    from: 0
+    to: 0
+  - name: SeventhHitWoundDamage
+    description: The sixth hit in a row deals +300 wound damage
+    value: 300
+    from: 1
+    to: 1

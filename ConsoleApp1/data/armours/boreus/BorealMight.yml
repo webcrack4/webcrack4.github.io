@@ -1,0 +1,19 @@
+name: Boreal Might
+description: Arms protection forged from Boreus trophies.
+icon: /assets/icons/armours/boreus/BorealMight.png
+type: Arms
+strength: Frost
+weakness: Blaze
+cells: Power
+resistance:
+  0: 5
+  1: 30
+perks:
+  - name: Rage
+    value: 1
+    from: 0
+    to: 0
+  - name: Rage
+    value: 3
+    from: 1
+    to: 1

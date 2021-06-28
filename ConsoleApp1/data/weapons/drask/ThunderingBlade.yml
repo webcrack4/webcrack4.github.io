@@ -1,0 +1,31 @@
+name: Thundering Blade
+description: A Slayer's sword forged with Drask trophies.
+icon: /assets/icons/weapons/drask/ThunderingBlade.png
+type: Sword
+damage: Slashing
+elemental: Shock
+cells: [Power, Utility]
+power:
+  0: 20
+  1: 120
+perks:
+  - name: Aetheric Attunement
+    value: 2
+    from: 0
+    to: 0
+  - name: Aetheric Attunement
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: TailDamage
+    description: 20% damage vs Behemoth Tails
+    value: 1.2
+    from: 0
+    to: 0
+  - name: TailDamage
+    description: 30% damage vs Behemoth Tails
+    value: 1.3
+    from: 1
+    to: 1
+

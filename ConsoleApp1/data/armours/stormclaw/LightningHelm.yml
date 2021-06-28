@@ -1,0 +1,19 @@
+name: Lightning Helm
+description: Head protection forged from Stormclaw trophies.
+icon: /assets/icons/armours/stormclaw/LightningHelm.png
+type: Head
+strength: Shock
+weakness: Terra
+cells: Technique
+resistance:
+  0: 20
+  1: 30
+perks:
+  - name: Energized
+    value: 2
+    from: 0
+    to: 0
+  - name: Energized
+    value: 3
+    from: 1
+    to: 1

@@ -1,0 +1,19 @@
+name: Torgadoro's Apex
+description: Head protection forged from Torgadoro trophies.
+icon: /assets/icons/armours/torgadoro/TorgadorosApex.png
+type: Head
+strength: Blaze
+weakness: Frost
+cells: Utility
+resistance:
+  0: 25
+  1: 30
+perks:
+  - name: Zeal
+    value: 2
+    from: 0
+    to: 0
+  - name: Zeal
+    value: 3
+    from: 1
+    to: 1

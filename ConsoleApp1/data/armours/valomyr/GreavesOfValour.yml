@@ -1,0 +1,19 @@
+name: Greaves of Valour
+description: Leg and foot protection forged from Valomyr trophies.
+icon: /assets/icons/armours/valomyr/GreavesOfValour.png
+type: Legs
+strength: Radiant
+weakness: Umbral
+cells: Utility
+resistance:
+  0: 15
+  1: 30
+perks:
+  - name: Aetherhunter
+    value: 2
+    from: 0
+    to: 0
+  - name: Aetherhunter
+    value: 3
+    from: 1
+    to: 1

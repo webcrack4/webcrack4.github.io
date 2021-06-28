@@ -1,0 +1,23 @@
+name: Spire of Dawn
+description: A Slayer's war pike forged with Rezakiri trophies.
+icon: /assets/icons/weapons/rezakiri/SpireOfDawn.png
+type: War Pike
+damage: Piercing
+elemental: Radiant
+cells: [Technique, Power]
+power:
+  0: 80
+  1: 120
+perks:
+  - name: Cunning
+    value: 2
+    from: 0
+    to: 0
+  - name: Cunning
+    value: 3
+    from: 1
+    to: 1
+unique_effects:
+  - name: HitTwice
+    description: 10% chance for attacks to Hit twice.
+    value: 0.1

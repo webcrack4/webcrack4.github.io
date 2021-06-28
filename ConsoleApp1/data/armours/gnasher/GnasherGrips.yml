@@ -1,0 +1,19 @@
+name: Gnasher Grips
+description: Arms protection forged from Gnasher trophies.
+icon: /assets/icons/armours/gnasher/GnasherGrips.png
+type: Arms
+strength: null
+weakness: null
+cells: Power
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Ragehunter
+    value: 1
+    from: 0
+    to: 0
+  - name: Ragehunter
+    value: 3
+    from: 1
+    to: 1

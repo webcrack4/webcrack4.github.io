@@ -1,0 +1,19 @@
+name: Quillspike Mask
+description: Head protection forged from Quillshot trophies.
+icon: /assets/icons/armours/quillshot/QuillspikeMask.png
+type: Head
+strength: null
+weakness: null
+cells: Defence
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Savagery
+    value: 1
+    from: 0
+    to: 0
+  - name: Savagery
+    value: 3
+    from: 1
+    to: 1

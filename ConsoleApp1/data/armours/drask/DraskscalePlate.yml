@@ -1,0 +1,19 @@
+name: Draskscale Plate
+description: Torso protection forged from Drask trophies.
+icon: /assets/icons/armours/drask/DraskscalePlate.png
+type: Torso
+strength: Shock
+weakness: Terra
+cells: Power
+resistance:
+  0: 5
+  1: 30
+perks:
+  - name: Aetheric Attunement
+    value: 1
+    from: 0
+    to: 0
+  - name: Aetheric Attunement
+    value: 3
+    from: 1
+    to: 1

@@ -1,0 +1,19 @@
+name: Quillspike Boots
+description: Leg and foot protection forged from Quillshot trophies.
+icon: /assets/icons/armours/quillshot/QuillspikeBoots.png
+type: Legs
+strength: null
+weakness: null
+cells: Technique
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Barbed
+    value: 1
+    from: 0
+    to: 0
+  - name: Barbed
+    value: 3
+    from: 1
+    to: 1

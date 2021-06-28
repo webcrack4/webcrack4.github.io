@@ -1,0 +1,4 @@
+name: Tactician's Magazine
+icon: /assets/icons/parts/repeaters/mods/TacticiansMagazine.png
+part_effect:
+  - Empowered Reloading at exactly 0 ammo decreases the cooldown of both abilities by 4 seconds.

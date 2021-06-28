@@ -1,0 +1,19 @@
+name: Shocking Grasp
+description: Arms protection forged from Nayzaga trophies.
+icon: /assets/icons/armours/nayzaga/ShockingGrasp.png
+type: Arms
+strength: Shock
+weakness: Terra
+cells: Utility
+resistance:
+  0: 10
+  1: 30
+perks:
+  - name: Aetheric Attunement
+    value: 1
+    from: 0
+    to: 0
+  - name: Aetheric Attunement
+    value: 3
+    from: 1
+    to: 1

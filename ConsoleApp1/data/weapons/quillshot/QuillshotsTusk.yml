@@ -1,0 +1,19 @@
+name: Quillshot's Tusk
+description: A Slayer's sword forged with Quillshot trophies.
+icon: /assets/icons/weapons/quillshot/QuillshotsTusk.png
+type: Sword
+damage: Slashing
+elemental: null
+cells: [Technique, Defence]
+power:
+  0: 20
+  1: 120
+perks:
+  - name: Acidic
+    value: 1
+    from: 0
+    to: 0
+  - name: Acidic
+    value: 3
+    from: 1
+    to: 1

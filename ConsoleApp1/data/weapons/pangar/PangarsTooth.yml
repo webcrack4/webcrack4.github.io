@@ -1,0 +1,19 @@
+name: Pangar's Tooth
+description: A Slayer's war pike forged with Pangar trophies.
+icon: /assets/icons/weapons/pangar/PangarsTooth.png
+type: War Pike
+damage: Piercing
+elemental: Frost
+cells: [Technique, Defence]
+power:
+  0: 40
+  1: 120
+perks:
+  - name: Weighted Strikes
+    value: 1
+    from: 0
+    to: 0
+  - name: Weighted Strikes
+    value: 3
+    from: 1
+    to: 1

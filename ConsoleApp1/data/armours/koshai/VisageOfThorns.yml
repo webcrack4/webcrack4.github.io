@@ -1,0 +1,19 @@
+name: Visage of Thorns
+description: Head protection forged from Koshai trophies.
+icon: /assets/icons/armours/koshai/VisageOfThorns.png
+type: Head
+strength: Terra
+weakness: Shock
+cells: Technique
+resistance:
+  0: 15
+  1: 30
+perks:
+  - name: Agility
+    value: 2
+    from: 0
+    to: 0
+  - name: Agility
+    value: 3
+    from: 1
+    to: 1

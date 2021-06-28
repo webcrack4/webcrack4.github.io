@@ -1,0 +1,19 @@
+name: Skraevwing Jacket
+description: Torso protection forged from Skraev trophies.
+icon: /assets/icons/armours/skraev/SkraevwingJacket.png
+type: Torso
+strength: Frost
+weakness: Blaze
+cells: Mobility
+resistance:
+  0: 15
+  1: 30
+perks:
+  - name: Adrenaline
+    value: 2
+    from: 0
+    to: 0
+  - name: Adrenaline
+    value: 3
+    from: 1
+    to: 1

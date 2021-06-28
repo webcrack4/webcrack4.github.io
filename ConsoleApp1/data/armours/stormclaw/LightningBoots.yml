@@ -1,0 +1,19 @@
+name: Lightning Boots
+description: Leg and foot protection forged from Stormclaw trophies.
+icon: /assets/icons/armours/stormclaw/LightningBoots.png
+type: Legs
+strength: Shock
+weakness: Terra
+cells: Mobility
+resistance:
+  0: 20
+  1: 30
+perks:
+  - name: Aetheric Frenzy
+    value: 2
+    from: 0
+    to: 0
+  - name: Aetheric Frenzy
+    value: 3
+    from: 1
+    to: 1

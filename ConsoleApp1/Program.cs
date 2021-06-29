@@ -55,8 +55,9 @@ namespace ConsoleApp1
       string fp8 = Environment.CurrentDirectory + "\\lanterns.json";
       string fp9 = Environment.CurrentDirectory + "\\cells.json";
       string fp10 = Environment.CurrentDirectory + "\\armours.json";
+      string fp11 = Environment.CurrentDirectory + "\\perks.json";
 
-      fileCreate(new string[] { fp1, fp2, fp3, fp4, fp5, fp6, fp7, fp8, fp9, fp10 });
+      fileCreate(new string[] { fp1, fp2, fp3, fp4, fp5, fp6, fp7, fp8, fp9, fp10, fp11 });
 
       deserializer = new DeserializerBuilder().Build();
       serializer = new SerializerBuilder().JsonCompatible().Build();
@@ -89,6 +90,7 @@ namespace ConsoleApp1
         }
       }
 
+      File.WriteAllText(fp11, JsonConvert.SerializeObject(perks));
       File.WriteAllText(fp2, JsonConvert.SerializeObject(effectList));
       File.WriteAllText(fp4, JsonConvert.SerializeObject(skillList));
       File.WriteAllText(fp7, JsonConvert.SerializeObject(availableSkillList));

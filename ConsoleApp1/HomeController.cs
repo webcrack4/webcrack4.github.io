@@ -418,7 +418,8 @@ namespace com.dauntless_autobuilder.Controllers
         }
     }
 
-    public class RequestBody
+  #region
+  public class RequestBody
     {
         public List<KeyValuePair<string, int>> keyValueList { get; set; }
         public bool hasLantern { get; set; }
@@ -512,22 +513,7 @@ namespace com.dauntless_autobuilder.Controllers
         public Dictionary<string, Equip> equips { get; set; }
         public List<Perk> cells { get; set; }
     }
-
-    public static class CacheKeys
-    {
-        public static string Skill { get { return "_Skill"; } }
-        public static string Weapon { get { return "_Weapon"; } }
-        public static string Armour { get { return "_Armour"; } }
-        public static string Cell { get { return "_Cell"; } }
-        public static string VirtualEquip { get { return "_VirtualEquip"; } }
-        public static string Lantern { get { return "_Lantern"; } }
-        public static string DauntlessVersion { get { return "_DauntlessVersion"; } }
-        public static string ClasssifiedEquip { get { return "_ClasssifiedEquip"; } }
-        public static string Perk { get { return "_Perk"; } }
-        public static string AvailableSkillList { get { return "_AvailableSkillList"; } }
-        public static string EffectList { get { return "_EffectList"; } }
-
-    }
+  #endregion
 }
 
 

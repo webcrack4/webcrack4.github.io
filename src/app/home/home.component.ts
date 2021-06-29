@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import jquery = require("jquery");
 const $: JQueryStatic = jquery;
 declare var require: any;
@@ -17,7 +16,7 @@ export class HomeComponent {
   public dv = require("../../assets/dauntless_version.json");
   public skillList: { [index: string]: SkillList }[] = require("../../assets/skillList.json");
   public weapons: { [index: string]: Weapon }[] = require("../../assets/weapons.json");
-  public perks: { [index: string]: Perk }[] = require("../../assets/effectList.json");
+  public perks: { [index: string]: any }[] = require("../../assets/perks.json");
   public searchValue = [];
   public searchResult = [];
   public moreSkillResult = [];
@@ -43,11 +42,13 @@ export class HomeComponent {
   private lanterns = require("../../assets/lanterns.json");
   private cells = require("../../assets/cells.json");
   private armours = require("../../assets/armours.json");
+  private MAX_SEARCH_NUM = 30;
+  private MAX_SKILL_SLOT_NUM = 12;
+  private cellsSlotRequirements: { [index: string]: number };
 
   constructor() {
     this.hasLantern = false;
     this.hasWeapon = false;
-    console.log("virtualEquips", this.virtualEquips);
   }
 
   ShowModal(set) {
@@ -104,10 +105,42 @@ export class HomeComponent {
 
 
     this.searchResult = []; //todo 搜索结果
+    var requirement = new Map();
+
+    var extraCellSlots = [];
+    for (let key in this.searchValue) {
+      if (this.searchValue[key] != 0){
+        var perk = this.perks.find((p)=>{
+          return p.name == key;
+        });
+        requirement.set([perk], this.searchValue[key]);
+      }
+    }
+    if(this.getTotoalSlotRequirement(requirement) > this.MAX_SKILL_SLOT_NUM){
+      return;
+    }
+
+    console.log(this.cellsSlotRequirements);
     this.loading = false;
     this.isShowSearchResult = true;
     this.isShowMoreSkillResult = false;
   }
+
+  getTotoalSlotRequirement(requirement: Map<any, any>) {
+    this.cellsSlotRequirements = {};
+    var numOfSlots = 0;
+    requirement.forEach((v,k)=>{
+      var numOfCurrentTypeOfSlot = v % 3 == 0 ? Math.floor(v/3) : (Math.floor(v/3) + 1);
+      numOfSlots += numOfCurrentTypeOfSlot;
+      if(this.cellsSlotRequirements[k[0].type] == null){
+        this.cellsSlotRequirements[k[0].type] = numOfCurrentTypeOfSlot
+      }else{
+        this.cellsSlotRequirements[k[0].type] += numOfCurrentTypeOfSlot
+      }
+    });
+    return numOfSlots;
+  }
+
 
   MoreSkill() {
     this.loading = true;
@@ -192,26 +225,11 @@ interface RequestBody {
   weaponName: string;
 }
 
-interface DauntlessVersion {
-  dauntless_version: string;
-  patchnotes_version_string: string;
-}
-
 interface SkillList {
 }
 
-interface Perk {
-}
 
 interface Weapon {
   type: string;
   name: string;
 }
-
-interface HomeResult {
-  item1: DauntlessVersion;
-  item2: { [index: string]: SkillList }[];
-  item3: { [index: string]: Weapon }[];
-  item4: { [index: string]: Perk }[];
-}
-
